@@ -37,13 +37,6 @@ class CarAdapter(
             itemView.setOnClickListener {
                 Toast.makeText(itemView.context, "${address.text}", Toast.LENGTH_SHORT).show()
 
-                val geocoder = Geocoder(context)
-
-                val inputAddress = geocoder.getFromLocationName("${address.text}",1)
-                Log.d("testt inputAddress", "${inputAddress}")
-
-                val url = "https://dapi.kakao.com/v2/local/search/address.json"
-
                 val retrofit = Retrofit.Builder()
                     .baseUrl("https://dapi.kakao.com/")
                     .addConverterFactory(GsonConverterFactory.create())
@@ -61,6 +54,7 @@ class CarAdapter(
                             val intent = Intent(itemView.context, MapActivity::class.java)
                             intent.putExtra("lat", lat)
                             intent.putExtra("lon",lon)
+                            intent.putExtra("place", place.text)
                             itemView.context.startActivity(intent)
                         }
                     }
@@ -83,8 +77,8 @@ class CarAdapter(
 
     override fun onBindViewHolder(holder: CarAdapter.ViewHolder, position: Int) {
         holder.address.text = stationList.get(position).stnAddr
-        holder.place.text = "건물명 : ${stationList.get(position).stnPlace}"
-        holder.carType.text = "지원차종 : ${stationList.get(position).carType}"
+        holder.place.text = stationList.get(position).stnPlace
+        holder.carType.text = "지원차종 : "+stationList.get(position).carType
     }
 
     override fun getItemCount(): Int {

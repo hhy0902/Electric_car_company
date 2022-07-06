@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
         val url = "https://bigdata.kepco.co.kr/openapi/v1/EVcharge.do?metroCd=11&cityCd=26&apiKey=57a6FT91h23nyi00Iz5GqX41L85I53vNPL8cgG80&returnType=json"
         val url2 = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query=자곡로3길 21"
 
@@ -58,11 +57,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
-
         }
-
     }
-
 }
 
 
