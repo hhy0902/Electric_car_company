@@ -79,7 +79,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             ?: MapFragment.newInstance().also {
                 fm.beginTransaction().add(R.id.map, it).commit()
             }
-
         mapFragment.getMapAsync(this)
 
         Log.d("testt location main", "nowLat : ${nowLat}, nowLon : ${nowLon}")

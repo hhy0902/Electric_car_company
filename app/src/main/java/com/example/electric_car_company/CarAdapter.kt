@@ -28,11 +28,15 @@ class CarAdapter(
         val address : TextView
         val place : TextView
         val carType : TextView
+        val rapidCnt : TextView
+        val slowCnt : TextView
 
         init {
             address = itemView.findViewById(R.id.address)
             place = itemView.findViewById(R.id.place)
             carType = itemView.findViewById(R.id.carType)
+            rapidCnt = itemView.findViewById(R.id.rapidCnt)
+            slowCnt = itemView.findViewById(R.id.slowCnt)
 
             itemView.setOnClickListener {
                 Toast.makeText(itemView.context, "${address.text}", Toast.LENGTH_SHORT).show()
@@ -63,11 +67,8 @@ class CarAdapter(
 
                     }
                 })
-
-
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarAdapter.ViewHolder {
@@ -79,6 +80,9 @@ class CarAdapter(
         holder.address.text = stationList.get(position).stnAddr
         holder.place.text = stationList.get(position).stnPlace
         holder.carType.text = "지원차종 : "+stationList.get(position).carType
+        holder.rapidCnt.text = stationList.get(position).rapidCnt.toString()
+        holder.slowCnt.text = stationList.get(position).slowCnt.toString()
+
     }
 
     override fun getItemCount(): Int {

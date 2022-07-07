@@ -9,8 +9,8 @@
         android:id="@+id/stationImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/ic_baseline_ev_station_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -18,9 +18,10 @@
         android:id="@+id/textAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
         android:text="주소 : "
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@id/stationImage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +29,9 @@
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@id/textAddress"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,9 +39,10 @@
         android:id="@+id/placeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
         android:text="건물명 : "
+        android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@id/stationImage"
         app:layout_constraintTop_toBottomOf="@id/address" />
 
@@ -47,29 +50,73 @@
         android:id="@+id/place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintStart_toEndOf="@id/placeText"
         app:layout_constraintTop_toBottomOf="@id/address" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/carTypeText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginVertical="5dp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:text="지원차종 : "-->
-<!--        app:layout_constraintStart_toEndOf="@id/stationImage"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/place" />-->
 
     <TextView
         android:id="@+id/carType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/stationImage"
         app:layout_constraintTop_toBottomOf="@id/placeText" />
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/stationImage"
+        app:layout_constraintTop_toBottomOf="@id/carType">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rapidCntText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="급속충전기 대수(대) : "
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/rapidCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/slowCntText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="완속충전기 대수(대) : "
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/slowCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

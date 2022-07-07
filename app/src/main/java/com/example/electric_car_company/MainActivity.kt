@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.electric_car_company.data.Car
 import com.example.electric_car_company.databinding.ActivityMainBinding
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onFailure(call: Call<Car>, t: Throwable) {
                     Log.d("testt onFailure message", "${t.message}")
+                    Toast.makeText(this@MainActivity, "다시 시도해주세요 ", Toast.LENGTH_SHORT).show()
                 }
 
             })
